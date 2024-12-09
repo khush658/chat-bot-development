@@ -1,0 +1,30 @@
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+# Function to simulate controlling devices
+def control_device(command):
+    # Simulate controlling smart devices
+    if "light" in command and "on" in command:
+        return "The light has been turned on."
+    elif "light" in command and "off" in command:
+        return "The light has been turned off."
+    elif "thermostat" in command and "increase" in command:
+        return "The thermostat has been increased."
+    elif "thermostat" in command and "decrease" in command:
+        return "The thermostat has been decreased."
+    else:
+        return "Sorry, I didn't understand that command."
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/execute', methods=['POST'])
+def execute_command():
+    command = request.form['command']
+    result = control_device(command)
+    return render_template('index.html', command=command, result=result)
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=80)
