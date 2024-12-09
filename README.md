@@ -1,6 +1,6 @@
 # chat-bot-development
 ChatHomeAutomation
-Smart Home Assistant Chatbot
+#Smart Home Assistant Chatbot
 This is a Smart Home Assistant Chatbot that allows users to control smart home devices through text-based commands. It is built using Python, Flask, and pyttsx3 (for text-to-speech functionality). The chatbot is designed to simulate the control of devices such as lights and thermostats.
 
 Features
